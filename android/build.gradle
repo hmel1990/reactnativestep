@@ -8,6 +8,9 @@ buildscript {
         kotlinVersion = "2.1.20"
     }
     repositories {
+        // Добавляем зеркала в начало списка
+        maven { url "https://maven.aliyun.com/repository/public" }
+        maven { url "https://maven.aliyun.com/repository/google" }
         google()
         mavenCentral()
     }
@@ -19,3 +22,13 @@ buildscript {
 }
 
 apply plugin: "com.facebook.react.rootproject"
+
+allprojects {
+    repositories {
+        // Добавляем зеркала и сюда тоже
+        maven { url "https://maven.aliyun.com/repository/public" }
+        maven { url "https://maven.aliyun.com/repository/google" }
+        google()
+        mavenCentral()
+    }
+}
