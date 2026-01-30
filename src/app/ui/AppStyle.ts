@@ -29,6 +29,12 @@ const AppStyle = StyleSheet.create({
   },
   navBar: {
     //footer
+    width: "100%",
+    backgroundColor: '#444',
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
   },
   navButton: {
     color: textColor,
