@@ -20,7 +20,7 @@ const AppStyle = StyleSheet.create({
   appBarTitle: {
     color: textColor,
     fontWeight: 700,
-    paddingVertical:10,
+    paddingVertical:2,
   },
   main:{
     backgroundColor: "salmon",

@@ -24,11 +24,24 @@ const CalcStyle = StyleSheet.create({
     textAlign: "right",
    },
    memoryRow: {
-    height: 40, // Фиксированная высота для ряда памяти
+      flex: 2,
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
     paddingHorizontal: 5,
+   },
+      // Landscape
+   containerResExpMem: {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-between",
+      
+   },
+   containerExpMem: {
+      flex: 2,
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between",
    },
    buttonRow: {
     flex: 2,

@@ -2,7 +2,7 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import Home from "../../pages/home/Home";
 import Calc from "../../pages/calc/Calc";
 import AppStyle from "./AppStyle";
-import { BackHandler, Pressable, Text, View } from "react-native";
+import { BackHandler, Image, Pressable, Text, TouchableOpacity, useWindowDimensions, View } from "react-native";
 import { useEffect, useState } from "react";
 
 // /product?id=100500
@@ -14,6 +14,8 @@ interface IRouteInformation {
 export default function App() {
     const [history, setHistory] = useState<Array<IRouteInformation>>([]);
     const [page, setPage] = useState<IRouteInformation>({slug: "home"});
+        const {width, height} = useWindowDimensions();
+    
 
     const navigate = (route:IRouteInformation) => {
         console.log(history);
@@ -48,9 +50,12 @@ export default function App() {
     return <SafeAreaProvider>
         <SafeAreaView edges={['top', 'bottom']} style={AppStyle.container}>
 
-            <View style={AppStyle.appBar}>
-                <Text style={AppStyle.appBarTitle}>React Native PV-421</Text>
-            </View>
+            {width < height &&
+                <View style={AppStyle.appBar}>
+                    <Text style={AppStyle.appBarTitle}>React Native PV-421</Text>
+                </View>
+            }
+
 
             <View style={AppStyle.main}>
                 {/* <Home /> */}
@@ -59,18 +64,28 @@ export default function App() {
                 : <Text>404</Text>
                 }                
             </View>
+            
 
+            {width < height &&
             <View style={AppStyle.navBar}>
-                <Text>Home</Text>
                 
-                <Pressable onPress={() => navigate({slug: "home"})}>
-                    <Text>Home</Text>
-                </Pressable>
+                <TouchableOpacity 
+                    onPress={() => navigate({slug: "home"})} 
+                    style={{width: 48, height: 48, }}>
+                    <Image 
+                        source={require("../assets/img/home.png")} 
+                        style={{width: 28, height: 28, tintColor: "#ddd", marginTop: 16}}/>
+                </TouchableOpacity>
 
-                <Pressable onPress={() => navigate({slug: "calc"})}>
-                    <Text>Calc</Text>
-                </Pressable>
+                <TouchableOpacity 
+                    onPress={() => navigate({slug: "calc"})} 
+                    style={{width: 48, height: 48, }}>
+                    <Image 
+                        source={require("../assets/img/calc.png")} 
+                        style={{width: 28, height: 28, tintColor: "#ddd", display:"flex", marginTop: 16}}/>
+                </TouchableOpacity>
             </View>
+        }
 
         </SafeAreaView>
     </SafeAreaProvider>;
