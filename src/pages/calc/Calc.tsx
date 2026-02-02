@@ -14,7 +14,7 @@ export default function Calc() {
 
     const formatResult = (rawStr: string): string => {
         // Убираем все существующие пробелы
-        let currentRes = rawStr.replace(/ /g, '');
+        let currentRes = rawStr.replace(' ', '');
         
         const parts = currentRes.split(dotSymbol);
         let intPart = parts[0];
@@ -176,33 +176,33 @@ export default function Calc() {
         <View style={CalcStyle.buttonRow}>
             <CalcButton data={{text:"％",  buttonType: CalcButtonType.operation, action: (btn:ICalcButtonData) => console.log(btn.text)}}/>
             <CalcButton data={{text:"÷", buttonType: CalcButtonType.operation}}/>
-            <CalcButton data={{text:"7", buttonType: CalcButtonType.digit    }}/>
-            <CalcButton data={{text:"8", buttonType: CalcButtonType.digit    }}/>
-            <CalcButton data={{text:"9", buttonType: CalcButtonType.digit    }}/>
+            <CalcButton data={{text:"7", buttonType: CalcButtonType.digit, action: digitClick    }}/>
+            <CalcButton data={{text:"8", buttonType: CalcButtonType.digit, action: digitClick    }}/>
+            <CalcButton data={{text:"9", buttonType: CalcButtonType.digit, action: digitClick    }}/>
             <CalcButton data={{text:"C",  buttonType: CalcButtonType.operation}}/>
         </View>
         <View style={CalcStyle.buttonRow}>
             <CalcButton data={{text:"1/x", buttonType: CalcButtonType.operation}}/>
             <CalcButton data={{text:"×", buttonType: CalcButtonType.operation}}/>
-            <CalcButton data={{text:"4", buttonType: CalcButtonType.digit    }}/>
-            <CalcButton data={{text:"5", buttonType: CalcButtonType.digit    }}/>
-            <CalcButton data={{text:"6", buttonType: CalcButtonType.digit    }}/>
+            <CalcButton data={{text:"4", buttonType: CalcButtonType.digit, action: digitClick    }}/>
+            <CalcButton data={{text:"5", buttonType: CalcButtonType.digit, action: digitClick    }}/>
+            <CalcButton data={{text:"6", buttonType: CalcButtonType.digit, action: digitClick    }}/>
             <CalcButton data={{text:"CE", buttonType: CalcButtonType.operation}}/>
         </View>
         <View style={CalcStyle.buttonRow}>
             <CalcButton data={{text:"x2", buttonType: CalcButtonType.operation}}/>
             <CalcButton data={{text:"-", buttonType: CalcButtonType.operation}}/>
-            <CalcButton data={{text:"1", buttonType: CalcButtonType.digit    }}/>
-            <CalcButton data={{text:"2", buttonType: CalcButtonType.digit    }}/>
-            <CalcButton data={{text:"3", buttonType: CalcButtonType.digit    }}/>
+            <CalcButton data={{text:"1", buttonType: CalcButtonType.digit, action: digitClick    }}/>
+            <CalcButton data={{text:"2", buttonType: CalcButtonType.digit, action: digitClick    }}/>
+            <CalcButton data={{text:"3", buttonType: CalcButtonType.digit, action: digitClick    }}/>
             <CalcButton data={{text:"⌫", buttonType: CalcButtonType.operation}}/>
         </View>
         <View style={CalcStyle.buttonRow}>
             <CalcButton data={{text:"Vx", buttonType: CalcButtonType.operation}}/>
             <CalcButton data={{text:"+", buttonType: CalcButtonType.operation}}/>
             <CalcButton data={{text:"+/-", buttonType: CalcButtonType.digit    }}/>
-            <CalcButton data={{text:"0", buttonType: CalcButtonType.digit    }}/>
-            <CalcButton data={{text:",", buttonType: CalcButtonType.digit    }}/>
+            <CalcButton data={{text:"0", buttonType: CalcButtonType.digit, action: digitClick    }}/>
+            <CalcButton data={{text:",", buttonType: CalcButtonType.digit, action: dotClick    }}/>
             <CalcButton data={{text:"=", buttonType: CalcButtonType.equal    }}/>
         </View>
     </View>;
