@@ -16,6 +16,8 @@ const CalcStyle = StyleSheet.create({
     color: "#bbb",
     textAlign: "right",
     marginTop: 10,
+    
+
    },
    result: {
     flex: 2,
@@ -24,7 +26,7 @@ const CalcStyle = StyleSheet.create({
     textAlign: "right",
    },
    memoryRow: {
-      flex: 2,
+    flex: 2,
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
@@ -32,6 +34,7 @@ const CalcStyle = StyleSheet.create({
    },
       // Landscape
    containerResExpMem: {
+      flex: 3,
       display: "flex",
       flexDirection: "row",
       justifyContent: "space-between",
@@ -58,6 +61,7 @@ const CalcStyle = StyleSheet.create({
    memoryButtonDisabled: {
     color: "#666", // Цвет для неактивной кнопки
    },
+
 });
 
 export default CalcStyle;
