@@ -3,6 +3,7 @@ const CalcButtonType = {
   operation: 'operation',
   equal: 'equal',
   disabled: 'disabled',
+  
 } as const;
 
 type CalcButtonType = (typeof CalcButtonType)[keyof typeof CalcButtonType];
